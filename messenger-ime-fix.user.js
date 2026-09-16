@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Messenger Safari 注音 Enter 修正
 // @namespace    https://github.com/maderaotech/safari-messenger-ime-fix
-// @version      1.0.0
+// @version      1.0.1
 // @description  避免 Safari 注音上屏時誤觸 Messenger 送出
 // @match        https://www.messenger.com/*
 // @match        https://www.facebook.com/messages/*
@@ -14,7 +14,11 @@
   'use strict';
 
   let composing = false;
-  let compositionEndedAt = 0;
+
+  const getEditableTarget = target => {
+    const element = target instanceof Element ? target : target?.parentElement;
+    return element?.closest('input, textarea, [contenteditable], [role="textbox"]');
+  };
 
   document.addEventListener('compositionstart', () => {
     composing = true;
@@ -22,11 +26,11 @@
 
   document.addEventListener('compositionend', () => {
     composing = false;
-    compositionEndedAt = performance.now();
   }, true);
 
   document.addEventListener('keydown', event => {
-    if (event.key !== 'Enter') {
+    const editable = getEditableTarget(event.target);
+    if (event.key !== 'Enter' || !editable) {
       return;
     }
 
@@ -34,7 +38,7 @@
       composing ||
       event.isComposing ||
       event.keyCode === 229 ||
-      performance.now() - compositionEndedAt < 100;
+      event.which === 229;
 
     if (!isImeEnter) {
       return;
