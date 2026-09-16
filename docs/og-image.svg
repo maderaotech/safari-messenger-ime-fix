@@ -3,13 +3,13 @@
   <circle cx="1030" cy="70" r="260" fill="#2a7072" opacity=".45"/>
   <circle cx="120" cy="10" r="220" fill="#f0785e" opacity=".4"/>
   <rect x="76" y="78" width="78" height="78" rx="24" fill="#f0785e"/>
-  <text x="115" y="132" text-anchor="middle" fill="#fffdf8" font-family="Noto Sans CJK TC, Arial, sans-serif" font-size="43" font-weight="700">⌁</text>
-  <text x="180" y="128" fill="#fffdf8" font-family="Noto Sans CJK TC, Arial, sans-serif" font-size="30" font-weight="700">Messenger IME Fix</text>
-  <text x="78" y="290" fill="#8ee0c2" font-family="Noto Sans CJK TC, Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="4">SAFARI · IME · MESSENGER</text>
-  <text x="78" y="390" fill="#fffdf8" font-family="Noto Sans CJK TC, Arial, sans-serif" font-size="64" font-weight="700">輸入法的 Enter，</text>
-  <text x="78" y="468" fill="#fffdf8" font-family="Noto Sans CJK TC, Arial, sans-serif" font-size="64" font-weight="700">留給輸入法。</text>
-  <rect x="810" y="285" width="300" height="92" rx="22" fill="#fffdf8"/>
-  <text x="960" y="343" text-anchor="middle" fill="#183743" font-family="Noto Sans CJK TC, Arial, sans-serif" font-size="28" font-weight="700">ㄋㄧˇ ㄏㄠˇ</text>
-  <rect x="850" y="405" width="260" height="70" rx="18" fill="#f0785e"/>
-  <text x="980" y="449" text-anchor="middle" fill="#fffdf8" font-family="Noto Sans CJK TC, Arial, sans-serif" font-size="24" font-weight="700">Enter 不送出</text>
+  <circle cx="115" cy="117" r="24" fill="#fffdf8"/>
+  <text x="180" y="128" fill="#fffdf8" font-family="Arial, sans-serif" font-size="30" font-weight="700">Messenger IME Fix</text>
+  <text x="78" y="290" fill="#8ee0c2" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="2">SAFARI · IME FIX</text>
+  <text x="78" y="390" fill="#fffdf8" font-family="Arial, sans-serif" font-size="62" font-weight="700">Let Enter belong</text>
+  <text x="78" y="468" fill="#fffdf8" font-family="Arial, sans-serif" font-size="62" font-weight="700">to your input method.</text>
+  <rect x="850" y="150" width="280" height="82" rx="20" fill="#fffdf8"/>
+  <text x="990" y="201" text-anchor="middle" fill="#183743" font-family="Arial, sans-serif" font-size="26" font-weight="700">IME composing...</text>
+  <rect x="850" y="260" width="280" height="72" rx="18" fill="#f0785e"/>
+  <text x="990" y="305" text-anchor="middle" fill="#fffdf8" font-family="Arial, sans-serif" font-size="23" font-weight="700">Enter does not send</text>
 </svg>
