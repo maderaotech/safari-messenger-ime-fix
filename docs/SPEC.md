@@ -45,7 +45,7 @@ docs/IMPLEMENTATION_PLAN.md # Delivery plan and verification record
 
 ## Boundaries
 
-- Always: Keep installation possible without Terminal; explain permissions clearly; keep the script limited to Messenger/Facebook message URLs; verify syntax before publishing.
+- Always: Keep installation and permission steps clear; keep the script limited to Messenger/Facebook message URLs; verify syntax before publishing.
 - Ask first: Change the IME interception behavior; add analytics, external JavaScript, or new permissions; add a license with different legal terms.
 - Never: Collect message content; send network requests from the userscript; include secrets; publish unrelated repository history.
 
