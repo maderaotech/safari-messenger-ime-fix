@@ -4,7 +4,6 @@
 
 協助使用者在 Facebook Messenger 使用中文、日文或其他輸入法時，避免輸入法組字階段按下 Enter 被誤判成送出訊息。
 
-目標使用者是不熟悉 JavaScript 與終端機的一般 Safari 使用者。
 
 ## Tech Stack
 
