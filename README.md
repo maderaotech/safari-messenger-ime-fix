@@ -6,6 +6,10 @@
 
 ## 中文｜安裝方式
 
+### 支援狀態
+
+目前只在 macOS Safari 測試。iPhone / iPad 尚未測試；若裝有 Facebook 或 Messenger App，iOS 可能會把連結直接開到 App，因此不保證能使用 Safari 網頁版。Facebook 官方對 Messenger 網頁功能的說明也主要以桌面版 `messenger.com` 為主。
+
 ### 你需要什麼？
 
 - Mac、iPhone 或 iPad
@@ -45,6 +49,10 @@
 - **仍然誤送出：** 先重新整理 Messenger；若 Facebook 改變輸入框行為，請到 [Issues](https://github.com/maderaotech/safari-messenger-ime-fix/issues) 回報 Safari 版本、裝置和頁面網址。
 
 ## English | Installation
+
+### Support status
+
+Currently tested only on Safari for macOS. iPhone / iPad have not been tested. When the Facebook or Messenger app is installed, iOS may open links directly in the app, so Safari web use is not guaranteed. Facebook’s official Messenger web instructions also primarily document the desktop `messenger.com` experience.
 
 ### What you need
 
