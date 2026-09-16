@@ -31,7 +31,7 @@ Package the existing userscript as a public, user-facing project with clear Chin
   - Verify: `node --check messenger-ime-fix.user.js`; inspect `git diff` and the clean publication tree.
   - Files: `messenger-ime-fix.user.js`, `.gitignore`
 
-- [ ] Task 5: Create and push the public repository with `gh`.
+- [x] Task 5: Create and push the public repository with `gh`.
   - Acceptance: `maderaotech/safari-messenger-ime-fix` is public and contains the tested project on `main`.
   - Verify: `gh repo view` and fetch the published raw script/README.
   - Files: remote repository only
