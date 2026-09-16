@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Messenger Safari 注音 Enter 修正
 // @namespace    https://github.com/maderaotech/safari-messenger-ime-fix
-// @version      1.0.1
+// @version      1.0.4
 // @description  避免 Safari 注音上屏時誤觸 Messenger 送出
 // @match        https://www.messenger.com/*
 // @match        https://www.facebook.com/messages/*
@@ -19,6 +19,9 @@
     const element = target instanceof Element ? target : target?.parentElement;
     return element?.closest('input, textarea, [contenteditable], [role="textbox"]');
   };
+
+  // 純監視器：移除時輸入框會在 IME Enter 後短暫縮短再恢復；保留 input 監聽以驗證此時序問題。不記錄、不讀取 DOM、不修改事件。
+  document.addEventListener('input', () => {}, true);
 
   document.addEventListener('compositionstart', () => {
     composing = true;
