@@ -14,19 +14,19 @@ Package the existing userscript as a public, user-facing project with clear Chin
 
 ### Phase 2: User installation flow
 
-- [ ] Task 2: Write the bilingual README.
+- [x] Task 2: Write the bilingual README.
   - Acceptance: A first-time user can install, verify, update, and uninstall without Terminal.
   - Verify: Check every external link and follow the steps for macOS and iPhone/iPad.
   - Files: `README.md`
 
-- [ ] Task 3: Add the static installation page.
+- [x] Task 3: Add the static installation page.
   - Acceptance: The page presents the purpose, requirements, install button, permissions, and troubleshooting in Chinese and English.
   - Verify: Parse the HTML and inspect responsive/keyboard-friendly markup.
   - Files: `docs/index.html`
 
 ### Phase 3: Verification and publication
 
-- [ ] Task 4: Verify the script and publication payload.
+- [x] Task 4: Verify the script and publication payload.
   - Acceptance: JavaScript syntax is valid, metadata is present, and only project files are selected for publication.
   - Verify: `node --check messenger-ime-fix.user.js`; inspect `git diff` and the clean publication tree.
   - Files: `messenger-ime-fix.user.js`, `.gitignore`
