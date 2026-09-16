@@ -2,6 +2,8 @@
 
 在 Safari 使用 Facebook Messenger 打中文時，輸入法正在「組字」的 Enter 不應該把訊息誤送出去。這個小型 Userscripts 腳本會攔住那一次誤觸，正常送出訊息的 Enter 不受影響。
 
+[中文｜安裝方式](#中文安裝方式)　|　[English | Installation](#english--installation)
+
 ## 中文｜安裝方式
 
 ### 你需要什麼？
