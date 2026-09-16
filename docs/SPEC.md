@@ -61,4 +61,3 @@ docs/IMPLEMENTATION_PLAN.md # Delivery plan and verification record
 ## Open Items
 
 - [Deferred] Confirm the final Safari/Userscripts behavior manually on the maintainer's Mac and/or iPhone after publication.
-- [Known Gap] GitHub Pages availability depends on enabling Pages for the new repository; the repository README remains immediately usable even without Pages.
