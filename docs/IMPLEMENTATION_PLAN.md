@@ -10,12 +10,12 @@ Package the existing userscript as a public, user-facing project with clear Chin
 
 - [x] Task 1: Record the scope, constraints, and acceptance criteria.
   - Acceptance: `docs/SPEC.md` documents objective, commands, structure, style, testing, boundaries, and success criteria.
-  - Verify: Review the specification for the no-Terminal installation flow.
+  - Verify: Review the specification for the installation flow.
 
 ### Phase 2: User installation flow
 
 - [x] Task 2: Write the bilingual README.
-  - Acceptance: A first-time user can install, verify, update, and uninstall without Terminal.
+  - Acceptance: A first-time user can install, verify, update, and uninstall by following the listed steps.
   - Verify: Check every external link and follow the steps for macOS and iPhone/iPad.
   - Files: `README.md`
 
