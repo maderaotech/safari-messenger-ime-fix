@@ -84,6 +84,8 @@
         padding-top: 84px;
       }
 
+      .hero-copy { min-height: 330px; display: flex; flex-direction: column; justify-content: center; }
+
       .eyebrow {
         margin: 0 0 16px;
         color: var(--coral-dark);
@@ -179,7 +181,7 @@
       .step h3 { margin: 0 0 8px; font-size: 1.08rem; }
       .step p { margin: 0; color: var(--muted); font-size: .95rem; }
 
-      .languages { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .languages { display: grid; grid-template-columns: 1fr; gap: 14px; }
       .language-card { padding: 30px; border-radius: 22px 8px 8px 8px; }
       .language-card h3 { margin: 0 0 18px; font-size: 1.35rem; }
       .language-card p { margin: 0 0 16px; color: var(--muted); }
@@ -189,6 +191,7 @@
       .note { margin-top: 14px; padding: 16px 18px; border-left: 4px solid var(--teal); background: #eaf1ed; color: #315659; }
 
       footer { padding: 30px 0 44px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+      footer .shell { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
       footer a { color: var(--ink); font-weight: 700; }
 
       @media (max-width: 760px) {
@@ -207,6 +210,60 @@
         .button:hover { transform: none; }
         .sketch { transform: none; }
       }
+
+      /* Visual refresh */
+      body { background: #f3efe8; }
+      header {
+        min-height: 100svh;
+        color: #fffdf8;
+        background:
+          radial-gradient(circle at 82% 12%, rgba(102, 216, 190, .24), transparent 28%),
+          radial-gradient(circle at 12% 8%, rgba(246, 146, 106, .24), transparent 28%),
+          #183743;
+      }
+      nav a:not(.brand) { color: rgba(255, 253, 248, .72); }
+      .nav-tools { display: flex; align-items: center; gap: 20px; }
+      .nav-tools > a { padding: 6px 0; text-decoration: none; }
+      .nav-tools > a:hover { color: #fffdf8; }
+      .language-switcher { display: inline-flex; gap: 4px; padding: 3px; border: 1px solid rgba(255, 253, 248, .25); border-radius: 999px; }
+      .language-switcher button { padding: 4px 9px; border: 0; border-radius: 999px; background: transparent; color: rgba(255, 253, 248, .72); cursor: pointer; font: 700 .78rem/1.3 inherit; }
+      .language-switcher button[aria-pressed="true"] { background: #fffdf8; color: #183743; }
+      .mark { background: #f0785e; }
+      .eyebrow { color: #8ee0c2; }
+      h1 { max-width: 720px; letter-spacing: -.055em; }
+      .lead { color: rgba(255, 253, 248, .76); }
+      .button { border-color: #f0785e; background: #f0785e; }
+      .button:hover { background: #ff9176; }
+      .button.secondary { border-color: rgba(255, 253, 248, .32); color: #fffdf8; }
+      .button.secondary:hover { background: rgba(255, 255, 255, .1); }
+      .sketch {
+        border-color: rgba(255, 253, 248, .16);
+        background: rgba(255, 253, 248, .96);
+        color: var(--ink);
+        box-shadow: 0 24px 70px rgba(0, 0, 0, .24);
+        transform: rotate(1deg);
+      }
+      .section { padding-top: 88px; }
+      .section-heading { margin-bottom: 30px; }
+      .step, .language-card { box-shadow: 0 10px 28px rgba(23, 43, 58, .06); }
+      .step { min-height: 202px; padding: 26px; }
+      .step::before { color: var(--teal); letter-spacing: .08em; }
+      .language-card { padding: 32px; }
+      .note { border-radius: 0 10px 10px 0; }
+      footer { background: #e9e2d7; }
+
+      @media (max-width: 760px) {
+        .shell { width: min(100% - 28px, 560px); }
+        nav { font-size: .82rem; }
+        nav a:not(.brand) { display: none; }
+        .nav-tools { gap: 0; }
+        header { padding-bottom: 48px; }
+        .hero { padding-top: 48px; }
+        .hero-copy { min-height: 390px; justify-content: flex-start; }
+        h1 { font-size: clamp(2.65rem, 15vw, 4.4rem); }
+        .section { padding-top: 62px; }
+        footer .shell { align-items: flex-start; }
+      }
     </style>
   </head>
   <body>
@@ -214,23 +271,29 @@
       <div class="shell">
         <nav aria-label="Primary navigation">
           <a class="brand" href="./"><span class="mark" aria-hidden="true">⌁</span> Messenger IME Fix</a>
-          <a href="https://github.com/maderaotech/safari-messenger-ime-fix">View on GitHub ↗</a>
+          <div class="nav-tools">
+            <a href="https://github.com/maderaotech/safari-messenger-ime-fix" data-zh="在 GitHub 查看 ↗" data-en="View on GitHub ↗">在 GitHub 查看 ↗</a>
+            <div class="language-switcher" aria-label="Language">
+              <button type="button" data-language="zh" aria-pressed="true">中文</button>
+              <button type="button" data-language="en" aria-pressed="false">English</button>
+            </div>
+          </div>
         </nav>
 
         <div class="hero">
-          <div>
-            <p class="eyebrow">Safari · Userscripts</p>
-            <h1>輸入法的 Enter，留給輸入法。</h1>
-            <p class="lead">修正 Safari 使用 Facebook Messenger 打中文時，組字中的 Enter 被誤當成「送出」的問題。</p>
+          <div class="hero-copy">
+            <p class="eyebrow" data-zh="Safari · IME · Messenger" data-en="Safari · IME · Messenger">Safari · IME · Messenger</p>
+            <h1 data-zh="輸入法的 Enter，留給輸入法。" data-en="Let Enter belong to your input method.">輸入法的 Enter，留給輸入法。</h1>
+            <p class="lead" data-zh="一個小型 Userscript，修正 Safari 使用 Facebook Messenger 輸入中文時，組字中的 Enter 被誤當成「送出」的問題。" data-en="A small Userscript that prevents Safari from treating the Enter key used during IME composition in Facebook Messenger as Send.">一個小型 Userscript，修正 Safari 使用 Facebook Messenger 輸入中文時，組字中的 Enter 被誤當成「送出」的問題。</p>
             <div class="actions">
-              <a class="button" href="https://raw.githubusercontent.com/maderaotech/safari-messenger-ime-fix/main/messenger-ime-fix.user.js">立即安裝腳本</a>
-              <a class="button secondary" href="https://apps.apple.com/app/userscripts/id1463298887">先安裝 Userscripts</a>
+              <a class="button" href="https://raw.githubusercontent.com/maderaotech/safari-messenger-ime-fix/main/messenger-ime-fix.user.js" data-zh="立即安裝腳本" data-en="Install the script">立即安裝腳本</a>
+              <a class="button secondary" href="https://apps.apple.com/app/userscripts/id1463298887" data-zh="先安裝 Userscripts" data-en="Get Userscripts first">先安裝 Userscripts</a>
             </div>
           </div>
           <div class="sketch" aria-label="Illustration showing IME composition protected from accidental sending">
             <div class="chat-line"><span class="dot"></span><div class="bubble">ㄋㄧˇ ㄏㄠˇ<span class="scribble"></span></div></div>
-            <div class="chat-line"><span class="dot" style="background: var(--coral)"></span><div class="bubble warn">Enter 不送出未完成的字</div></div>
-            <div class="chat-line"><span class="dot"></span><div class="bubble">完成後照常送出 ✓</div></div>
+            <div class="chat-line"><span class="dot" style="background: var(--coral)"></span><div class="bubble warn" data-zh="Enter 不送出未完成的字" data-en="Enter does not send unfinished text">Enter 不送出未完成的字</div></div>
+            <div class="chat-line"><span class="dot"></span><div class="bubble" data-zh="完成後照常送出 ✓" data-en="Send completed text as usual ✓">完成後照常送出 ✓</div></div>
           </div>
         </div>
       </div>
@@ -238,34 +301,26 @@
 
     <main class="shell">
       <section class="section" id="install">
-        <div class="section-heading"><h2>三步，完成。</h2><span>Three small steps. That’s it.</span></div>
+        <div class="section-heading"><h2 data-zh="三步，完成。" data-en="Three steps. Done.">三步，完成。</h2><span data-zh="安裝後就能開始使用" data-en="Ready after installation">安裝後就能開始使用</span></div>
         <div class="steps">
-          <article class="step"><h3>安裝 Userscripts</h3><p>從 App Store 安裝 Safari 的 Userscripts 延伸功能。</p></article>
-          <article class="step"><h3>允許網站權限</h3><p>在 Safari 延伸功能設定中，允許它存取 Facebook 和 Messenger。</p></article>
-          <article class="step"><h3>點一下安裝</h3><p>點上方按鈕，Userscripts 顯示提示後按 Install。</p></article>
+          <article class="step"><h3 data-zh="安裝 Userscripts" data-en="Install Userscripts">安裝 Userscripts</h3><p data-zh="從 App Store 安裝 Safari 的 Userscripts 延伸功能。" data-en="Install the Userscripts Safari extension from the App Store.">從 App Store 安裝 Safari 的 Userscripts 延伸功能。</p></article>
+          <article class="step"><h3 data-zh="允許網站權限" data-en="Allow website access">允許網站權限</h3><p data-zh="在 Safari 延伸功能設定中，允許它存取 Facebook 和 Messenger。" data-en="In Safari extension settings, allow it to access Facebook and Messenger.">在 Safari 延伸功能設定中，允許它存取 Facebook 和 Messenger。</p></article>
+          <article class="step"><h3 data-zh="點一下安裝" data-en="Click to install">點一下安裝</h3><p data-zh="點上方按鈕，Userscripts 顯示提示後按 Install。" data-en="Click the button above, then choose Install when Userscripts asks.">點上方按鈕，Userscripts 顯示提示後按 Install。</p></article>
         </div>
-        <p class="note"><strong>小提醒：</strong>安裝或更新後，開一次 Userscripts 延伸功能視窗，再重新整理 Messenger。</p>
+        <p class="note"><strong data-zh="小提醒：" data-en="Tip:">小提醒：</strong> <span data-zh="安裝或更新後，開一次 Userscripts 延伸功能視窗，再重新整理 Messenger。" data-en="After installing or updating, open the Userscripts extension once, then reload Messenger。">安裝或更新後，開一次 Userscripts 延伸功能視窗，再重新整理 Messenger。</span></p>
       </section>
 
       <section class="section">
-        <div class="section-heading"><h2>Clear in both languages.</h2><span>給第一次安裝的人看的說明</span></div>
+        <div class="section-heading"><h2 data-zh="它會做什麼？" data-en="What does it do?">它會做什麼？</h2><span data-zh="給第一次安裝的人看的說明" data-en="A short guide for first-time users">給第一次安裝的人看的說明</span></div>
         <div class="languages">
           <article class="language-card">
-            <h3>中文</h3>
-            <p>這個腳本只處理輸入法組字期間的 Enter，不讀取、不儲存、不傳送你的訊息。</p>
+            <h3 data-zh="保護組字中的 Enter" data-en="Protect Enter during composition">保護組字中的 Enter</h3>
+            <p data-zh="這個腳本只處理輸入法組字期間的 Enter，不讀取、不儲存、不傳送你的訊息。" data-en="The script only handles Enter while an IME is composing. It does not read, store, or transmit your messages.">這個腳本只處理輸入法組字期間的 Enter，不讀取、不儲存、不傳送你的訊息。</p>
             <ul>
-              <li>適用 Mac、iPhone、iPad 的 Safari</li>
-              <li>支援中文、日文等輸入法</li>
-              <li>完成輸入後，Enter 照常送出</li>
-            </ul>
-          </article>
-          <article class="language-card" lang="en">
-            <h3>English</h3>
-            <p>This script protects Enter while an IME is composing. It does not read, store, or transmit your messages.</p>
-            <ul>
-              <li>For Safari on Mac, iPhone, and iPad</li>
-              <li>Works with Chinese, Japanese, and other IMEs</li>
-              <li>Normal Enter still sends completed messages</li>
+              <li data-zh="目前已在 macOS Safari 測試" data-en="Tested on Safari for macOS">目前已在 macOS Safari 測試</li>
+              <li data-zh="iPhone / iPad 尚未測試" data-en="iPhone / iPad not tested">iPhone / iPad 尚未測試</li>
+              <li data-zh="支援中文、日文等輸入法" data-en="Works with Chinese, Japanese, and other IMEs">支援中文、日文等輸入法</li>
+              <li data-zh="完成輸入後，Enter 照常送出" data-en="Normal Enter still sends completed messages">完成輸入後，Enter 照常送出</li>
             </ul>
           </article>
         </div>
@@ -273,7 +328,31 @@
     </main>
 
     <footer>
-      <div class="shell">Open source installation helper · <a href="https://github.com/maderaotech/safari-messenger-ime-fix/issues">Report a problem</a></div>
+      <div class="shell"><span>© 2026 MaderaoTech · <span data-zh="開源安裝工具" data-en="Open-source installation helper">開源安裝工具</span></span><a href="https://github.com/maderaotech/safari-messenger-ime-fix/issues" data-zh="回報問題" data-en="Report a problem">回報問題</a></div>
     </footer>
+
+    <script>
+      (() => {
+        const buttons = document.querySelectorAll('[data-language]');
+        const translatable = document.querySelectorAll('[data-zh][data-en]');
+        const savedLanguage = localStorage.getItem('messenger-ime-fix-language') || 'zh';
+
+        const setLanguage = language => {
+          translatable.forEach(element => {
+            element.textContent = element.dataset[language];
+          });
+          buttons.forEach(button => {
+            button.setAttribute('aria-pressed', String(button.dataset.language === language));
+          });
+          document.documentElement.lang = language === 'zh' ? 'zh-Hant' : 'en';
+          localStorage.setItem('messenger-ime-fix-language', language);
+        };
+
+        buttons.forEach(button => {
+          button.addEventListener('click', () => setLanguage(button.dataset.language));
+        });
+        setLanguage(savedLanguage);
+      })();
+    </script>
   </body>
 </html>
