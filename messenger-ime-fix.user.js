@@ -5,6 +5,7 @@
 // @description  避免 Safari 注音上屏時誤觸 Messenger 送出
 // @match        https://www.messenger.com/*
 // @match        https://www.facebook.com/messages/*
+// @match        https://www.facebook.com/*
 // @run-at       document-start
 // @grant        none
 // ==/UserScript==
